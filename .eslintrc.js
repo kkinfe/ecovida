@@ -1,4 +1,5 @@
 module.exports = {
+	root: true,
 	env: {
 		browser: true,
 		es2021: true,
@@ -10,6 +11,7 @@ module.exports = {
 	},
 	extends: [
 		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
 		'prettier',
 		'plugin:react/jsx-runtime',
@@ -26,7 +28,7 @@ module.exports = {
 			},
 		},
 	],
-	parser: '@babel/eslint-parser',
+	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 2020,
 		sourceType: 'module',
@@ -36,14 +38,13 @@ module.exports = {
 			globalReturn: false,
 		},
 	},
-	plugins: ['react'],
+	plugins: ['react', '@typescript-eslint'],
 	rules: {
 		'react/prop-types': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-props-no-spreading': ['off'],
 		'no-shadow': 'off',
-		indent: ['warn', 'tab'],
-		quotes: ['error', 'single'],
-		semi: ['error', 'always'],
+		quotes: ['warn', 'single'],
+		semi: ['warn', 'always'],
 	},
 };
